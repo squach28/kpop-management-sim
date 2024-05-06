@@ -1,5 +1,5 @@
 import express from "express";
 import { getIdolById } from "../controllers/idolController";
-export const idolRouter = express.Router();
+export const idolRoutes = express.Router();
 
-idolRouter.get("/:id", getIdolById);
+idolRoutes.get("/:id", getIdolById);
