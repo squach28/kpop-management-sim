@@ -1,14 +1,17 @@
-import { Avatar, Center, Flex, Text } from "@chakra-ui/react";
+import { Avatar, Center, Flex } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { auth } from "../main";
 import { useEffect, useState } from "react";
+import { User } from "firebase/auth";
 
 const NavBar = () => {
 
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState<User | null>(null)
 
   useEffect(() => {
-    console.log(auth.currentUser)
+    if(auth.currentUser) {
+      setUser(auth.currentUser)
+    }
   }, [])
 
   return (
