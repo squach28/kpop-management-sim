@@ -1,9 +1,9 @@
 import ReactDOM from "react-dom/client";
-import App from "./App.tsx";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { ChakraProvider } from "@chakra-ui/react";
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
+import Home from "./pages/Home.tsx";
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -21,7 +21,7 @@ export const auth = getAuth(app)
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <Home />,
   },
 ]);
 
