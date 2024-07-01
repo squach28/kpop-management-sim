@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import NavBar from "./components/NavBar";
 import { Idol } from "./types/Idol";
+import { auth } from "./main";
 
 const App = () => {
   const [idols, setIdols] = useState<Idol[]>([]);
@@ -8,6 +9,7 @@ const App = () => {
     fetch(`${import.meta.env.VITE_API_URL}/idols`)
       .then((res) => res.json())
       .then((data: Idol[]) => {
+        console.log(auth);
         setIdols(data);
       });
   }, []);
