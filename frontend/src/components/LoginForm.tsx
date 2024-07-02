@@ -16,7 +16,6 @@ const LoginForm = () => {
 
   return (
     <Flex
-      minWidth="40%"
       direction="column"
       borderColor="gray"
       boxShadow="xl"
