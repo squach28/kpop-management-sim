@@ -4,6 +4,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import Home from "./pages/Home.tsx";
+import Login from "./pages/Login.tsx";
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
     path: "/",
     element: <Home />,
   },
+  {
+    path: "/login",
+    element: <Login />
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
